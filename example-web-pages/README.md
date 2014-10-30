@@ -1,6 +1,6 @@
 ###Pinoccio Web Page Integration Examples
 
-You may need to upload these to a server in order to get them to run. (For example, the light sensor reporting page won't get any data if you try to just run it from your computer.) If you have Dropbox, you can save the .html file to your Public folder, right-click and copy the public link, then open that URL in your browser.
+You'll need to have these on a server in order for them to run. (For example, the light sensor reporting page won't get any data if you try to just run it from your computer.) If you have Dropbox, you can save the .html file to your Public folder, right-click and copy the public link, then open that URL in your browser.
 
 The light sensor and temperature pages were created from Jake's Codepen examples, using [this method](https://www.youtube.com/watch?v=tisD2jI1Tuc).
 

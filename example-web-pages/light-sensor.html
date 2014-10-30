@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<!--
+This code created by Jake Ingman: http://codepen.io/jingman/pen/hDCpw
+It reports data from a Pinoccio light sensor circuit: http://support.pinocc.io/hc/en-us/articles/201858250-Real-time-Light-Sensor-in-Javascript
+-->
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Pinoccio Realtime Light Sensor</title>
+
+  <style>html {
+  font-size: 16px;
+  font-family: "Helvetica Neue", "Helvetica", "Arial";
+  font-weight: 100;
+}
+
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+p {
+  font-size: 10rem;
+}
+.units {
+  font-size: 3rem;
+  vertical-align: middle;
+  letter-spacing: .35rem;
+}</style>
+
+</head>
+
+<body>
+
+  <p><span id="value">--</span><span class="units">%</span></p>
+
+  <script src='https://api.pinocc.io/pinoccio.js'></script>
+
+  <script>
+    // Grab the value element
+var value = document.getElementById('value');
+
+// Initialize the Pinoccio API with a read-only token
+// https://docs.pinocc.io/api.html#readonly-token
+var api = pinoccioAPI('2067ffafe3b7b815a13bd9f64bb71b92');
+// Initialize the sync stream with {stale:1}
+// https://docs.pinocc.io/api.html#realtime-stream-of-changes
+var s = api.sync({stale:1});
+
+// When the sync stream gets data
+s.on('data', function(data){
+  // If it's the value we want, set the value element text
+  if (data.type === 'analog' && data.troop === '1' && data.scout === '7') {
+    value.innerHTML = Math.round(data.value.state[3] / 1024 * 100);
+  }
+})
+    //@ sourceURL=pen.js
+  </script>
+
+</body>
+
+</html>

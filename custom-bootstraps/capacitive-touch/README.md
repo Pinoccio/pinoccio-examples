@@ -35,3 +35,5 @@ function on.cp.high { ping; };
 Poke the "P" touch pad to make each Scout in your troop blink its torch LED. Good for explaining to people how the network functions!  
 I also recommend having a [button](http://www.hackster.io/erictj/pinoccio-button-press) on another Scout, with a similar command, so you can demonstrate that **any** scout can control all the others.  
 You could also combine this with a [command.scout()](https://docs.pinocc.io/scoutcommands.html#command-scout) call, to show off how each Scout can be addressed individually.
+
+[See it in action!](https://vine.co/u/1049166214951567360)

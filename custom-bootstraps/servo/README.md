@@ -15,6 +15,12 @@ As noted by Jacob, this is is based on PJRC's [TimerThree](http://www.pjrc.com/t
 
 Enter these functions in the Arduino IDE, or in [Pinoccio HQ](http://hq.pinocc.io), to see some cool stuff happen.
 
+In order for these to work, you'll first need to initialize the timer that controls the servo:
+`timer3.initialize(20000);`
+
+I recommend putting this in the startup function, along with any other setup functions you want to run, so that it will run every time the Scout boots up:
+`function startup { timer3.initialize(20000); }`
+
 ####Basic positioning
 
 `function tt { timer3.pwm(3, arg(1)); };`

@@ -13,4 +13,7 @@ Enter these functions in the Arduino IDE, or in [Pinoccio HQ](http://hq.pinocc.i
 
 ####Flash of inspiration
 
-I'll throw in the example ScoutScript for this soon. It just calls pixels.fadeout when the MindFlex-connected Scout sends a signal over the given threshold. This causes the NeoPixel strip to flash bright white and then fade out.
+This causes the NeoPixel strip to flash bright white and then fade out, when you hit your target attention value. It's super distracting, but good for demos. :)  
+Don't point the NeoPixels at your eyes!! They're very, very bright.
+
+`function brainpixel { a = brain.attention; if (a < 80) { pixels.fadeout; }; };`
